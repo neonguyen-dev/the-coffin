@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function AboutView() {
     return (
       <div className="bg-white flex h-screen sm:h-screen">

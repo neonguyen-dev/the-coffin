@@ -1,4 +1,4 @@
-import About from "../presenters/aboutViewPresenter.js"
+import About from "../presenters/aboutViewPresenter.jsx"
 
 export default function Home() {
   return (
