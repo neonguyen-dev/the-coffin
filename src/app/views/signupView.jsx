@@ -7,23 +7,23 @@ export default function SignupView(){
             <hr></hr>
             <div>
                 <label><b>Name: </b></label>
-                <input type="text" placeholder="Enter your name" name="name" required></input>          
+                <input type="text" placeholder="John Protagonist" name="name" required></input>          
             </div>
 
             <hr></hr>
             <div>
                 <label><b>Email: </b></label>
-                <input type="text" placeholder="Enter Email" name="email" required></input>          
+                <input type="text" placeholder="john@example.com" name="email" required></input>          
             </div>
 
             <hr></hr>
             <div>
-                <label><b>Plus one for: </b></label>
+                <label><b>Plus one: </b></label>
                 <input type="text" placeholder="Do you have a specific +1?" name="name" required></input>          
             </div>
 
             <hr></hr>
-            <p>I agree to having my data temporarily saved in compliance with <a href="#">GDPR Rules and Regulations</a>.</p>
+            <p>I consent to having my data temporarily saved in compliance with <a href="https://gdpr-info.eu/">GDPR Rules and Regulations</a>.</p>
 
             <label>
                 <input type="checkbox" name="remember"></input> I agree 
