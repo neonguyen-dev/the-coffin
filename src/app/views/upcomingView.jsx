@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function UpcomingView(props) {
     return (
         <div className="bg-gray-800">
@@ -15,7 +17,7 @@ export default function UpcomingView(props) {
 
     function renderEventsCB(event) {
         return (
-            <a href="#">
+            <Link href={"/pub/" + event.id}>
                 <div className="card w-80 bg-gray-600 shadow-xl rounded-lg hover:scale-105 transition">
                     <figure><img className="h-48 rounded-t-lg object-cover" src={event.imgSrc} alt="Event Image" /></figure>
                     <div className="card-body h-48 px-4 py-4">
@@ -27,7 +29,7 @@ export default function UpcomingView(props) {
                         <p>{"Price: " + event.price + " kr"}</p>
                     </div>
                 </div>
-            </a>
+            </Link>
         );
     }
 }
