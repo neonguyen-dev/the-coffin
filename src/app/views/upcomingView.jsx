@@ -23,7 +23,6 @@ export default function UpcomingView(props) {
                     <div className="card-body h-48 px-4 py-4">
                         <h1 className="text-xl font-bold card-title">{event.name}</h1>
                         <p className="py-4">{event.description}</p>
-                        {console.log(event.date)}
                         <p>{event.date.getDate() + " " + event.date.toLocaleString('en-us', { month: 'long' }) + " " + event.startTime.getHours() + ":" + (event.startTime.getMinutes() < 10 ? '0' : '') + event.startTime.getMinutes()}</p>
                         <p>{"Food: " + event.food}</p>
                         <p>{"Price: " + event.price + " kr"}</p>
