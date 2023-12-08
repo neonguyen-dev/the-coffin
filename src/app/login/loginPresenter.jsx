@@ -17,6 +17,7 @@ observer(
       signIn={() => {
         resolveAuthSignIn(email, password).then((user) => {
           console.log(user);
+          window.location.href = "/";
         }).catch((error) => {
           console.log(error);
         })
