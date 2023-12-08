@@ -3,7 +3,7 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
 import LoginView from "./loginView"
-import { authGetUser, authSignIn } from "@/firebase/firebaseAuth";
+import { resolveAuthSignIn } from "@/firebase/firebaseAuth";
 
 export default
 observer(
@@ -15,12 +15,11 @@ observer(
       setEmail={setEmail}
       setPassword={setPassword}
       signIn={() => {
-        authSignIn(email, password);
-        const user = authGetUser();
-        console.log(user);
-        if (user) {
-          window.location.href = "/"; // Redirect to admin page (home page for now)
-        }
+        resolveAuthSignIn(email, password).then((user) => {
+          console.log(user);
+        }).catch((error) => {
+          console.log(error);
+        })
       }}/>
   }
 );
