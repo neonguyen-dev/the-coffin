@@ -1,11 +1,26 @@
 "use client"
 
-import LoginView from "./loginView"
 import { observer } from "mobx-react-lite";
+import { useState } from "react";
+import LoginView from "./loginView"
+import { authGetUser, authSignIn } from "@/firebase/firebaseAuth";
 
 export default
 observer(
-  function Login() {
-    return <LoginView />
+  function Login(props) {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    return <LoginView
+      setEmail={setEmail}
+      setPassword={setPassword}
+      signIn={() => {
+        authSignIn(email, password);
+        const user = authGetUser();
+        console.log(user);
+        if (user) {
+          window.location.href = "upcoming"; // Redirect to admin page (upcoming for now)
+        }
+      }}/>
   }
 );
