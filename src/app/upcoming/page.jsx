@@ -1,5 +1,4 @@
-import Calendar from "../presenters/calendarViewPresenter.jsx"
-import Upcoming from "../presenters/upcomingViewPresenter.jsx"
+import Upcoming from "./upcomingViewPresenter.jsx"
 
 export default function Home() {
   return (

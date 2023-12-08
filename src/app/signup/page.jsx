@@ -1,4 +1,4 @@
-import Signup from "../presenters/signupViewPresenter.jsx"
+import Signup from "./signupViewPresenter.jsx"
 
 export default function Home() {
   return (
