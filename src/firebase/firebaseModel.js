@@ -1,10 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase, push, set, ref } from "firebase/database";
+import { push, set, ref } from "firebase/database";
 
-import firebaseConfig from "./firebaseConfig.js";
-
-const app= initializeApp(firebaseConfig)
-const db= getDatabase(app);
+import { db } from "./firebaseConfig.js";
 
 set(ref(db, 'pubs'), 
   [{
