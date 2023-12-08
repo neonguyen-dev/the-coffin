@@ -19,7 +19,7 @@ observer(
         const user = authGetUser();
         console.log(user);
         if (user) {
-          window.location.href = "upcoming"; // Redirect to admin page (upcoming for now)
+          window.location.href = "/"; // Redirect to admin page (home page for now)
         }
       }}/>
   }
