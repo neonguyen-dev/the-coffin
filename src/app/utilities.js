@@ -194,7 +194,7 @@ export function createAdminEvent() {
 /*
 Creates an adminEvent with the specified arguments
 */
-export function createAdminEvent(
+/*export function createAdminEvent(
   name,
   organizer,
   startTime,
@@ -211,5 +211,5 @@ export function createAdminEvent(
     adminEvent.setFood(food, price);
     adminEvent.setImgSrc(imgSrc);
     return adminEvent;
-  }
+  }*/
 

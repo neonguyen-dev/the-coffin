@@ -44,7 +44,7 @@ async function readFromFirebase(model){
     model.ready = false;
     const snapshot = await get(ref(db, 'pubs'));
     await persistenceToModel(snapshot.val(), model);
-    model.ready = true;
+    model.ready = true;3
 }
 
 export default readFromFirebase;

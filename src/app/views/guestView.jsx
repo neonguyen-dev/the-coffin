@@ -8,7 +8,7 @@ function GuestView() {
                 <h2 className="text-4xl text-white sm:text-6xl">Welcome to Kistan 2.0 </h2>
                 <div className="py-5 grid gap-y-5 gap-x-10 grid-cols-1 sm:grid-cols-2">
                     <button className="flex items-center justify-center transition rounded-lg bg-red-700 hover:bg-red-800 btn-lg py-4" onClick={() => window.location.href = "https://qmisk.com/"}>
-                        <Image
+                        <img
                             alt="Qmisk logo"
                             src="/Qmisk-white.png"
                             width="676"
@@ -17,7 +17,7 @@ function GuestView() {
                         />
                     </button>
                     <button className="flex items-center justify-center transition rounded-lg bg-blue-700 hover:bg-blue-800 btn-lg py-4" onClick={() => window.location.href = "https://tmeit.se/"}>
-                        <Image
+                        <img
                         alt="Tmeit logo"
                         src="/Tmeit.svg"
                         width="676"

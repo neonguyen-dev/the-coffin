@@ -11,7 +11,6 @@ export default observer(
     function Upcoming() {
         const [loading, setLoading] = useState(true);
         useEffect(() => { readFromFirebase(model).then(() => { setLoading(false) }) }, []);
-        console.log(model);
         return (
             <div>
                 {loading ? (

@@ -3,3 +3,9 @@ export default function Home() {
       <p>fuueiofybv</p>
     );
   }
+
+  export function generateStaticParams() {
+    return {
+
+    };
+  }
