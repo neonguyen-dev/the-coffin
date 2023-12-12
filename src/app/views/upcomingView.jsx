@@ -6,7 +6,7 @@ export default function UpcomingView(props) {
             <div className="py-8">
                 <header className="text-6xl font-bold text-white sm:text-6xl text-center">Upcoming pubs</header>
             </div>
-            <div className="flex flex-wrap py-5 px-8 sm:px-20 gap-5">
+            <div className="flex flex-wrap py-5 px-8 sm:px-20 gap-5 justify-center sm:justify-start">
                 {[...props.model.events].sort(
                     function (a, b) {
                         return new Date(a.date) - new Date(b.date);

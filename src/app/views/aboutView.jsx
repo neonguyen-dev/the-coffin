@@ -2,7 +2,7 @@
 export default function AboutView() {
     return (
       <div className="bg-white flex sm:h-screen">
-        <div className="m-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+        <div className="m-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 py-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">The Coffin team</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">The Coffin team is a group of students from KTH Kista. The team developed The Coffin as a part of the course DH2642 Interaction Programming and the Dynamic Web.</p>

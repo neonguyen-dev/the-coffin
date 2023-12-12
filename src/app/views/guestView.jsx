@@ -2,18 +2,18 @@ import Image from "next/image";
 
 function GuestView() {
     return (
-        <div className="flex flex-col h-screen">
-            <div className="m-auto">
+        <div className="bg-gray-900 flex flex-col h-screen">
+            <div className="m-auto justify-center">
                 <h1 className="text-6xl font-bold text-white sm:text-8xl text-center">The Coffin</h1>
                 <h2 className="text-4xl text-white sm:text-6xl">Welcome to Kistan 2.0 </h2>
-                <div className="py-5 grid gap-y-5 gap-x-10 grid-cols-1 sm:grid-cols-2">
+                <div className="py-2 sm:py-5 grid gap-x-10 grid-cols-1 sm:grid-cols-2">
                     <button className="flex items-center justify-center transition rounded-lg bg-red-700 hover:bg-red-800 btn-lg py-4" onClick={() => window.location.href = "https://qmisk.com/"}>
                         <img
                             alt="Qmisk logo"
                             src="/Qmisk-white.png"
                             width="676"
                             height="231"
-                            className="w-56"
+                            className="w-60"
                         />
                     </button>
                     <button className="flex items-center justify-center transition rounded-lg bg-blue-700 hover:bg-blue-800 btn-lg py-4" onClick={() => window.location.href = "https://tmeit.se/"}>
@@ -22,7 +22,7 @@ function GuestView() {
                         src="/Tmeit.svg"
                         width="676"
                         height="231"
-                        className="w-44"
+                        className="w-36"
                         />    
                     </button>
                 </div>
