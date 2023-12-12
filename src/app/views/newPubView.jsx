@@ -36,7 +36,6 @@ export default function NewPub() {
     <hr></hr>
     <div>
         <input type="file" id="myFile" name="filename" ></input>  
-        <input type="submit"></input>
     </div>
 
     
