@@ -22,7 +22,7 @@ export default function UpcomingView(props) {
                     <figure><img className="h-48 rounded-t-lg object-cover" src={event.imgSrc} alt="Event Image" /></figure>
                     <div className="card-body h-48 px-4 py-4">
                         <h1 className="text-xl font-bold card-title">{event.name}</h1>
-                        <p className="py-4">{event.description}</p>
+                        <p className="py-4">{event.organizer}</p>
                         <p>{/*event.date.getDate() + " " + event.date.toLocaleString('en-us', { month: 'long' }) + " " + event.startTime.getHours() + ":" + (event.startTime.getMinutes() < 10 ? '0' : '') + event.startTime.getMinutes()*/}</p>
                         <p>{"Food: " + event.food}</p>
                         <p>{"Price: " + event.price + " kr"}</p>
