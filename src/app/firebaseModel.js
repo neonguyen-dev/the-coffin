@@ -9,9 +9,9 @@ const db = getDatabase(app);
 /*addEventToFirebase({
     name: "Nyaktiv pub",
     organizer: "QMISK",
-    date: new Date('2023-12-07'),
-    startTime: new Date('2023-12-07T17:00'),
-    endTime: new Date('2023-12-08T03:00'),
+    date: new Date('2023-12-07').getTime(),
+    startTime: new Date('2023-12-07T17:00').getTime(),
+    endTime: new Date('2023-12-08T03:00').getTime(),
     description: "VÄLKOMNA TILLBAKA TILL QMISK PUB!",
     food: "Korv Stroganoff",
     price: 25,
@@ -46,7 +46,7 @@ async function readFromFirebase(model){
     model.ready = false;
     const snapshot = await get(ref(db, 'pubs'));
     await persistenceToModel(snapshot.val(), model);
-    model.ready = true;3
+    model.ready = true;
 }
 
 export default readFromFirebase;
