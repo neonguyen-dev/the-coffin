@@ -3,6 +3,8 @@ import {useState} from 'react';
 export default function LivePub(props){
     const[guest, setGuest] = useState('');
     const[guestsArray, setGuestsArray] = useState([]);
+    const[internals, setInternals] = useState(0);
+    const[externals, setExternals] = useState(0);
     const[totalGuests, setTotalGuests] = useState(0);
     const [showExternalInput, setShowExternalInput] = useState(false);
     const [externalInputValue, setExternalInputValue] = useState('');
@@ -18,6 +20,7 @@ export default function LivePub(props){
             setGuestsArray([...guestsArray, {internal: guest, external: null}]);
             setGuest('');
             setTotalGuests(totalGuests + 1);
+            setInternals(internals + 1);
         }
     };
 
@@ -52,6 +55,7 @@ export default function LivePub(props){
             };
             setGuestsArray(updatedGuestsArray);
             setTotalGuests(totalGuests + 1);
+            setExternals(externals + 1);
             setExternalInputValue('');
             setShowExternalInput(false);
             setActiveInternalGuestIndex(null); 
@@ -62,6 +66,8 @@ export default function LivePub(props){
         <div className="bg-gray-800 min-h-screen">
             <h1 className="font-bold text-center text-5xl">Guest List</h1>
             <p className="font-bold text-3xl">Total Guests: {totalGuests}</p>
+            <p className="font-bold text-3xl">Total Internal Guests: {internals}</p>
+            <p className="font-bold text-3xl">Total External Guests: {externals}</p>
             <form onSubmit={inputSubmit}>
                 <input 
                 type = "text" 
