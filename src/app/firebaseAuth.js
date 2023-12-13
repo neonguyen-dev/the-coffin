@@ -9,3 +9,11 @@ export async function resolveAuthSignIn(email, password) {
     throw error;
   }
 };
+
+export async function resolveAuthSignOut() {
+  try {
+    return await signOut(auth);
+  } catch (error) {
+    throw error;
+  }
+};
