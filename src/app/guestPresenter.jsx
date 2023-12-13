@@ -1,6 +1,6 @@
 'use client'
 
-import GuestView from "../views/guestView.jsx";
+import GuestView from "./guestView.jsx";
 import { observer } from "mobx-react-lite";
 
 export default observer(

@@ -1,10 +1,10 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-import DetailedPub from "../../presenters/detailedPubPresenter.jsx"
+import DetailedPub from "./pubPresenter.jsx"
 
 import model from "../../EventsModel.js"
-import readFromFirebase from "../../firebaseModel.js";
+import readFromFirebase from "../../../firebase/firebaseModel.js";
 
 export default function Home(props) {
   const [loading, setLoading] = useState(true);

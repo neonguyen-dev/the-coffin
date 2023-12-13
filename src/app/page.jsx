@@ -1,4 +1,4 @@
-import Guest from "./presenters/guestViewPresenter.jsx"
+import Guest from "./guestPresenter.jsx"
 
 export default function Home() {
   return (

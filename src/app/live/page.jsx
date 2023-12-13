@@ -1,4 +1,4 @@
-import CreateLivePub from "../presenters/livePubPresenter.jsx"
+import CreateLivePub from "./livePubPresenter.jsx"
 
 export default function Home() {
     return (

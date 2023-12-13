@@ -1,4 +1,4 @@
-import Schedule from "../presenters/scheduleViewPresenter.jsx"
+import Schedule from "./schedulePresenter.jsx"
 
 export default function Home() {
     return (

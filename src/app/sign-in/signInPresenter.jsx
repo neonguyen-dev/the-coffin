@@ -5,8 +5,8 @@ import { observer } from "mobx-react-lite";
 import { useState } from "react";
 
 // Local imports from project
-import SignInView from "../views/signInView";
-import { resolveAuthSignIn } from "../firebaseAuth";
+import { resolveAuthSignIn } from "@/firebase/firebaseAuth";
+import SignInView from "./signInView";
 
 export default
 observer(
