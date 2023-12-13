@@ -29,10 +29,12 @@ export default function LivePub(props){
 
         if (updatedGuestsArray[index].external) {
             updatedGuestsArray[index].external = null;
+            setExternals(externals -1);
         } else {
             updatedGuestsArray.splice(index, 1);
+            setInternals(internals - 1);
         }
-    
+        
         setGuestsArray(updatedGuestsArray);
         setTotalGuests(totalGuests - 1);
     };
