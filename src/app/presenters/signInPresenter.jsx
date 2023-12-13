@@ -1,10 +1,12 @@
 "use client"
 
-// 3rd party librarys
+// Third party libraries
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
+
+// Local imports from project
 import SignInView from "../views/signInView";
-import { resolveAuthSignIn } from "@/firebase/firebaseAuth";
+import { resolveAuthSignIn } from "../firebaseAuth";
 
 export default
 observer(
