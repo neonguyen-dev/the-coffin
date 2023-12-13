@@ -1,4 +1,6 @@
 export default function DetailedPubView(props) {
+    const date = new Date(props.event.date);
+    console.log(date);
     return (
         <div
         class="py-5 sm:px-10 text-card-foreground mx-auto bg-gray-800 shadow-md min-h-screen"
@@ -25,7 +27,7 @@ export default function DetailedPubView(props) {
                     <line x1="8" x2="8" y1="2" y2="6"></line>
                     <line x1="3" x2="21" y1="10" y2="10"></line>
                 </svg>
-                <p class="text-sm md:text-base">December 24, 2023</p>
+                <p class="text-sm md:text-base">{date.getDate() + " " + date.toLocaleString('en-us', { month: 'long' }) + " " + date.getFullYear()}</p>
             </div>
             <div class="flex items-center space-x-2 mt-1">
                 <svg
