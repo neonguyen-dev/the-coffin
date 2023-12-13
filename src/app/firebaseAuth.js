@@ -17,3 +17,12 @@ export async function resolveAuthSignOut() {
     throw error;
   }
 };
+
+// Adds observer to auth with onChange as CB function if there is a change in state
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("User state changed, user is logged in!");
+  } else {
+    console.log("User state changed, user is logged out!");
+  }
+});
