@@ -2,9 +2,11 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, push, ref, get, set } from "firebase/database";
 
 import firebaseConfig from "./firebaseConfig.js";
+import { getAuth } from "@firebase/auth";
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const auth = getAuth(app);
 
 /*addEventToFirebase({
     name: "Nyaktiv pub",
@@ -51,3 +53,4 @@ async function readFromFirebase(model){
 
 export default readFromFirebase;
 
+export {auth};

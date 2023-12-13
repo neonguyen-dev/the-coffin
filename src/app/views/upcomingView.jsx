@@ -16,14 +16,16 @@ export default function UpcomingView(props) {
     );
 
     function renderEventsCB(event) {
+        const date = new Date(event.date);
+
         return (
             <Link href={"/pub/" + event.id}>
                 <div className="card w-80 bg-gray-600 shadow-xl rounded-lg hover:scale-105 transition">
                     <figure><img className="h-48 rounded-t-lg object-cover" src={event.imgSrc} alt="Event Image" /></figure>
                     <div className="card-body h-48 px-4 py-4">
                         <h1 className="text-xl font-bold card-title">{event.name}</h1>
+                        <p>{date.getDate() + " " + date.toLocaleString('en-us', { month: 'long' }) + " " + date.getFullYear()}</p>
                         <p className="py-4">{event.organizer}</p>
-                        <p>{/*event.date.getDate() + " " + event.date.toLocaleString('en-us', { month: 'long' }) + " " + event.startTime.getHours() + ":" + (event.startTime.getMinutes() < 10 ? '0' : '') + event.startTime.getMinutes()*/}</p>
                         <p>{"Food: " + event.food}</p>
                         <p>{"Price: " + event.price + " kr"}</p>
                     </div>

@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth"
 
-import { auth } from "../firebase/firebaseConfig";
+import { auth } from "./firebaseModel";
 
 export async function resolveAuthSignIn(email, password) {
   try {

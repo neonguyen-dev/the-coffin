@@ -3,8 +3,7 @@ export default function DetailedPubView(props) {
     console.log(date);
     return (
         <div
-        class="py-5 sm:px-10 text-card-foreground mx-auto bg-gray-800 shadow-md min-h-screen"
-    >
+        class="pb-5 sm:py-5 sm:px-10 text-card-foreground mx-auto bg-gray-800 shadow-md">
         <div class="flex flex-col space-y-1.5 p-6">
             <div class="flex justify-between items-center">
                 <h3 class="tracking-tight text-2xl md:text-3xl font-bold">{props.event.name}</h3>
