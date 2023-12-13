@@ -96,10 +96,10 @@ export default function LivePub(props){
                 ))}
             </ul>
             {showExternalInput && (
-            <div className="flex items-center justify-left m-2">
+            <form className="flex items-center justify-left m-2">
                 <input onChange={handleExternalInputChange} value={externalInputValue} placeholder="Add +1" className="text-black h- m-2 rounded-full justify-center"/>
                 <button onClick={handleExternalInputSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 m-2 rounded">Add +1</button>
-            </div>)}
+            </form>)}
             {console.log(guestsArray)}
         </div>
     );
