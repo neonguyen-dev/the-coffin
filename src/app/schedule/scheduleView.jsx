@@ -1,7 +1,25 @@
 import Link from 'next/link';
+import React, { useEffect, useState } from "react";
+//import UpcomingView from "../views/upcomingView.jsx";
+import eventsConst from '@/utilities/eventsConst';
+import { observer } from "mobx-react-lite";
 
+export default observer(function AdminSchedule(props) {
+    const [filteredEvents, setFilteredEvents] = useState([...eventsConst]);
+    const [selectedOrganizer, setSelectedOrganizer] = useState("All");
 
-export default function AdminSchedule(props) {
+    const handleFilter = (organizer) => {
+        setSelectedOrganizer(organizer);
+        if (organizer === "All") {
+          setFilteredEvents([...eventsConst]);
+        } else {
+          const filtered = eventsConst.filter(
+            (event) => event.organizer === organizer
+          );
+          setFilteredEvents(filtered);
+        }
+      };
+
     return (
 
         <div className="bg-gray-800 min-h-screen">
@@ -9,12 +27,12 @@ export default function AdminSchedule(props) {
             <div className="dropdown">
                 <button className="dropbtn">What Mastery?</button>
                 <div className="dropdown-content">
-                    <a href="#">All</a>
-                    <a href="#">Qmisk</a>
-                    <a href="#">TMEIT</a>
+                    <a href="#" onClick={() => handleFilter("All")}> All</a>
+                    <a href="#" onClick={() => handleFilter("QMISK")}> Qmisk</a>
+                    <a href="#" onClick={() => handleFilter("TMEIT")}>TMEIT</a>
                 </div>
             </div>
-            <div class="button_plus"></div>
+        <div class="button_plus"></div>
 
 
             <div className="flex flex-wrap py-5 px-8 sm:px-20 gap-5 justify-center sm:justify-start">
@@ -44,4 +62,7 @@ export default function AdminSchedule(props) {
             </Link>
         );
     }
+
+    
 }
+);
