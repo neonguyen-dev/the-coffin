@@ -3,10 +3,13 @@ import { getDatabase, push, ref, get, set } from "firebase/database";
 
 import firebaseConfig from "./firebaseConfig.js";
 import { getAuth } from "@firebase/auth";
+import { getStorage } from "firebase/storage";
+
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
+const imageDb = getStorage(app);
 
 /*addEventToFirebase({
     name: "Nyaktiv pub",
@@ -44,6 +47,8 @@ async function addEventToFirebase(eventToAdd){
     console.log("add");
 }
 
+
+
 async function readFromFirebase(model){
     model.ready = false;
     const snapshot = await get(ref(db, 'pubs'));
@@ -51,4 +56,4 @@ async function readFromFirebase(model){
     model.ready = true;
 }
 
-export {auth, readFromFirebase, addEventToFirebase};
+export {auth, imageDb, readFromFirebase, addEventToFirebase};
