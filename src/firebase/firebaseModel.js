@@ -30,8 +30,6 @@ async function addEventToFirebase(eventToAdd){
             name: eventToAdd.name,
             organizer: eventToAdd.organizer,
             date: eventToAdd.date,
-            startTime: eventToAdd.startTime,
-            endTime: eventToAdd.endTime,
             description: eventToAdd.description,
             food: eventToAdd.food,
             price: eventToAdd.price,
@@ -42,6 +40,8 @@ async function addEventToFirebase(eventToAdd){
     const eventId = eventRef.key;
     
     await set(ref(db, `pubs/${eventId}`), { ...eventToAdd, id: eventId });
+
+    console.log("add");
 }
 
 async function readFromFirebase(model){
@@ -51,6 +51,4 @@ async function readFromFirebase(model){
     model.ready = true;
 }
 
-export default readFromFirebase;
-
-export {auth};
+export {auth, readFromFirebase, addEventToFirebase};

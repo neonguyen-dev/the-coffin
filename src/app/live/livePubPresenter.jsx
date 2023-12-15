@@ -7,4 +7,4 @@ export default observer(
     function CreateLivePub() {
         return <LivePub/>;
     }
-    );
+);
