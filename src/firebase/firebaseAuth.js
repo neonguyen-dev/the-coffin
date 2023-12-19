@@ -18,6 +18,10 @@ export async function resolveAuthSignOut() {
   }
 };
 
+export function getCurrentUser() {
+  return auth?.currentUser;
+}
+
 // Adds observer to auth with onChange as CB function if there is a change in state
 onAuthStateChanged(auth, (user) => {
   if (user) {
