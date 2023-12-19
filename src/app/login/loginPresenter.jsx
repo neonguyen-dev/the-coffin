@@ -6,18 +6,18 @@ import { useState } from "react";
 
 // Local imports from project
 import { resolveAuthSignIn } from "@/firebase/firebaseAuth";
-import SignInView from "./signInView";
+import LoginView from "./loginView";
 
 export default
 observer(
-  function SignIn(props) {
+  function Login() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    return <SignInView
+    return <LoginView
       setEmail={setEmail}
       setPassword={setPassword}
-      signIn={() => {
+      login={() => {
         resolveAuthSignIn(email, password).then((user) => {
           console.log(user);
           window.location.href = "/";

@@ -47,7 +47,7 @@ function GuestView() {
                             <Link href="about" className="hover:underline me-4 md:me-6">About</Link>
                         </li>
                         <li>
-                            <Link href="sign-in" className="hover:underline">Log in</Link>
+                            <Link href="login" className="hover:underline">Login</Link>
                         </li>
                     </ul>
                 </div>
