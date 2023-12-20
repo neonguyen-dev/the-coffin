@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from "react";
-//import UpcomingView from "../views/upcomingView.jsx";
-import eventsConst from '@/utilities/eventsConst';
 import { observer } from "mobx-react-lite";
 import "../EventsModel.js"
 
@@ -36,7 +34,7 @@ export default observer(function AdminSchedule(props) {
                     <a href="#" onClick={() => handleFilter("TMEIT")}>TMEIT</a>
                 </div>
             </div>
-        <div class="button_plus"></div>
+        <Link href="http://localhost:3000/newpub" class="button_plus"></Link>
 
 
             <div className="flex flex-wrap py-5 px-8 sm:px-20 gap-5 justify-center sm:justify-start">
