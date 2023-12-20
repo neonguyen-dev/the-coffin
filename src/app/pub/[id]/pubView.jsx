@@ -114,6 +114,7 @@ export default function DetailedPubView(props) {
             <h1 className="font-bold mb-4 text-xl">Description</h1>
             {props.event.description}
         </div>
+        <button class="simpleButton">Delete Pub</button>
     </div>
     );
 }

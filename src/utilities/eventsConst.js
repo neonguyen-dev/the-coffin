@@ -2,7 +2,7 @@ const eventsConst = [
     {
         id: 2,
         name: "Nyaktiv pub",
-        organizer: "TMIET",
+        organizer: "QMISK",
         date: new Date('2023-12-07'),
         startTime: new Date('2023-12-07T17:00'),
         endTime: new Date('2023-12-08T03:00'),
