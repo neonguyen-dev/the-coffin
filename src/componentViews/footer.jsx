@@ -1,5 +1,4 @@
 // Third party library imports
-import { getCurrentUser } from "@/firebase/firebaseAuth";
 import Link from "next/link";
 
 export function Footer(props) {
@@ -14,9 +13,9 @@ export function Footer(props) {
           <li>
             <Link href="about" className="hover:underline me-4 md:me-6">About</Link>
           </li>
-          <li>
-            {props.user && <p onClick={() => {props.logout()}} className="hover:underline cursor-">Log out</p>}
-            {!props.user && <Link href="login" className="hover:underline">Login</Link>}
+          <li className="hover:underline">
+            {props.user && <p onClick={() => {props.logout()}}>Log out</p>}
+            {!props.user && <Link href="login">Login</Link>}
           </li>
         </ul>
       </div>
