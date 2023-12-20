@@ -17,7 +17,8 @@ const AuthContext = createContext();
 export function AuthContextProvider({children}) {
   const [user, setUser] = useState(null);
 
-  function register(email, password) {
+  function register(email, password, firstName, lastName, organisation, securityLevel) {
+    // TODO create more constraints given the other parameters/create separate function for them (probably the best solution)
     return createUserWithEmailAndPassword(auth, email, password);
   }
 

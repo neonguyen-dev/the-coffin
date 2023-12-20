@@ -14,7 +14,9 @@ export default observer(
     return (
       <div>
         <GuestView user={user} logout={() => {
-          logout().then(/* Do nothing */).catch((error) => {
+          logout().then(
+            console.log("You are now logged out")
+          ).catch((error) => {
             console.log(error);
           })
         }}/>

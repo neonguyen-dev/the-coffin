@@ -9,8 +9,7 @@ import { useRouter } from "next/navigation";
 import LoginView from "./loginView";
 import { UserAuth } from "@/context/AuthContext";
 
-export default
-observer(
+export default observer(
   function Login() {
     const {login} = UserAuth();
     const router = useRouter(); // For manually changing the path
@@ -23,7 +22,7 @@ observer(
       setPassword={setPassword}
       login={() => {
         login(email, password).then((user) => {
-          console.log(user);
+          console.log("You are now logged in");
           router.push("/");
         }).catch((error) => {
           console.log(error);
