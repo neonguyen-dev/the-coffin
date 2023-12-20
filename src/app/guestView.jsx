@@ -42,7 +42,7 @@ export default function GuestView(props) {
         </div>
       </div>
       {/* Footer component view */}
-      <Footer logout={() => props.logout()}/>
+      <Footer user={props.user} logout={() => props.logout()}/>
     </div>
   );
 }

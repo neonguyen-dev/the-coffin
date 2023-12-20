@@ -15,11 +15,8 @@ export function Footer(props) {
             <Link href="about" className="hover:underline me-4 md:me-6">About</Link>
           </li>
           <li>
-            {getCurrentUser() && 
-              <button type="button" onClick={() => {props.logout()}} className="hover:underline">
-                Sign out
-              </button>}
-            {!getCurrentUser() && <Link href="login" className="hover:underline">Login</Link>}
+            {props.user && <p onClick={() => {props.logout()}} className="hover:underline cursor-">Log out</p>}
+            {!props.user && <Link href="login" className="hover:underline">Login</Link>}
           </li>
         </ul>
       </div>
