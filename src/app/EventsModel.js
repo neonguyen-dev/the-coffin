@@ -1,6 +1,7 @@
 
 export default {
   events: [],
+  guestsArray: [],
 
   /*
   Adds a given event to the array of events
