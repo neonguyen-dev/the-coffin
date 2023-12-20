@@ -3,18 +3,21 @@ import React, { useEffect, useState } from "react";
 //import UpcomingView from "../views/upcomingView.jsx";
 import eventsConst from '@/utilities/eventsConst';
 import { observer } from "mobx-react-lite";
+import "../EventsModel.js"
+
 
 export default observer(function AdminSchedule(props) {
-    const [filteredEvents, setFilteredEvents] = useState([...eventsConst]);
+    const [filteredEvents, setFilteredEvents] = useState([...props.model.events]);
     const [selectedOrganizer, setSelectedOrganizer] = useState("All");
 
     const handleFilter = (organizer) => {
+        {console.log(filteredEvents)}
         setSelectedOrganizer(organizer);
         if (organizer === "All") {
-          setFilteredEvents([...eventsConst]);
+          setFilteredEvents([...props.model.events]);
         } else {
-          const filtered = eventsConst.filter(
-            (event) => event.organizer === organizer
+          const filtered = props.model.events.filter(
+            (event) => event.organizer == organizer
           );
           setFilteredEvents(filtered);
         }
@@ -27,8 +30,9 @@ export default observer(function AdminSchedule(props) {
             <div className="dropdown">
                 <button className="dropbtn">What Mastery?</button>
                 <div className="dropdown-content">
+                    
                     <a href="#" onClick={() => handleFilter("All")}> All</a>
-                    <a href="#" onClick={() => handleFilter("QMISK")}> Qmisk</a>
+                    <a href="#" onClick={() => handleFilter("Qmisk")}> Qmisk</a>
                     <a href="#" onClick={() => handleFilter("TMEIT")}>TMEIT</a>
                 </div>
             </div>
@@ -36,7 +40,7 @@ export default observer(function AdminSchedule(props) {
 
 
             <div className="flex flex-wrap py-5 px-8 sm:px-20 gap-5 justify-center sm:justify-start">
-                {[...props.model.events].sort(
+                {[...filteredEvents].sort(
                     function (a, b) {
                         return new Date(a.date) - new Date(b.date);
                     }).map(renderEventsCB)}
