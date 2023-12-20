@@ -44,14 +44,14 @@ async function addGuestListToFirebase(guestList){
 
 async function readGuestsFromFirebase(model){
     model.ready = false;
-    const snapshot = await get(ref(db, 'guest'));
+    const snapshot = await get(ref(db, '/'));
     await persistenceToModel(snapshot.val(), model);
     model.ready = true; 
 }
 
 async function readFromFirebase(model){
     model.ready = false;
-    const snapshot = await get(ref(db, 'pubs'));
+    const snapshot = await get(ref(db, '/'));
     await persistenceToModel(snapshot.val(), model);
     model.ready = true;
 }
