@@ -20,10 +20,10 @@ export default function LivePub(props){
                 <button onClick={props.handleExternalInputSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 w-auto m-2 rounded">Add +1</button>
             </form>)}
             <ul className='list-none text-center'>
-                {props.guestsArray.map((guest, index) => (
+                {props.model.guestsArray.map((guest, index) => (
                     <li key={index} className='bg-gray-950 flex font-bold justify-left border'>
                         <button className="bg-red-500 hover:bg-red-700 text-white font-bold px-4 py-2 m-2 rounded w-6 flex justify-center" onClick={() => props.handleDelete(index)}>x</button>
-                        <button onClick={() => props.renderExternalInput(index)} className={`bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 m-2 rounded w-6 flex justify-center ${guest.external ? 'cursor-not-allowed opacity-50' : ''}`} disabled={guest.external !==null}>+1</button>
+                        <button onClick={() => props.renderExternalInput(index)} className={`bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 m-2 rounded w-6 flex justify-center ${guest.external ? 'cursor-not-allowed opacity-50' : ''}`} disabled={guest.external !==""}>+1</button>
                         <p className='flex items-center justify-left m-2'>{guest.internal}</p>
                         {guest.external && (
                         <div className="flex items-center justify-center mx-auto">
