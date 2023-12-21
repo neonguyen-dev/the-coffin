@@ -126,6 +126,28 @@ button:hover {
   transition-property: color, background-color, border-color;
 }
 
+.simpleButton2{
+  display: inline-block;
+  margin: 10px;
+  outline: 0;
+  left: 150px;
+  cursor: pointer;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 40px;
+  width: 150px;
+  vertical-align: middle;
+  border: 1px solid;
+  border-radius: 6px;
+  color: #24292e;
+  background-color: #fafbfc;
+  border-color: #1b1f2326;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+}
+
 .dropbtn {
   background-color: #585462;
   color: white;
@@ -163,47 +185,3 @@ button:hover {
 .dropdown:hover .dropbtn {background-color: #585462;}
 
 
-.button_plus {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  top: 18%;
-  left: 95%;
-  background: #fff;
-  cursor: pointer;
-  border: 2px solid #095776;
-  
-}
-
-.button_plus:after {
-  content: '';
-  position: absolute;
-  transform: translate(-50%, -50%);
-  height: 4px;
-  width: 50%;
-  background: #095776;
-  top: 50%;
-  left: 50%;
-}
-
-.button_plus:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #095776;
-  height: 50%;
-  width: 4px;
-}
-
-.button_plus:hover:before,
-.button_plus:hover:after {
-  background: #fff;
-  transition: 0.2s;
-}
-
-.button_plus:hover {
-  background-color: #095776;
-  transition: 0.2s;
-}
