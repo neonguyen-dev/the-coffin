@@ -31,9 +31,11 @@ export default function LiveCounterView(props) {
     if (currentDate >= eventDate) {
         return (
             <div className="text-center bg-gray-800 pb-10">
-                <h1 className="text-4xl font-bold">Live Counter</h1>
-                <div className="font-mono text-6xl">
-                    <div>{props.guestCount}</div>
+                <h1 className="text-2xl font-bold sm:text-4xl">Live Counter</h1>
+                <div className="font-mono text-2xl sm:text-4xl">
+                    <div>Guests:{props.guestCount}</div>
+                    <div>Internals:{props.internalCount}</div>
+                    <div>Externals:{props.externalCount}</div>
                 </div>
             </div>
         );

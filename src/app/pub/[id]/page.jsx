@@ -33,11 +33,7 @@ export default function Home(props) {
       unsubscribe();
     };
   }, []);
-
-  useEffect(() => {
-    
-    }, [guestsArray]);
-
+  
   const event = events.find((object) => object.id === props.params.id);
 
   if(event == undefined){
