@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function LiveCounterView(props) {
     const currentDate = new Date().getTime();
-    const eventDate = props.event.date;
+    const eventDate = props.event?.date;
   
     const calculateTimeRemaining = () => {
         const distance = eventDate - new Date().getTime();

@@ -6,6 +6,8 @@ import DetailedPub from "./pubPresenter.jsx"
 import model from "../../EventsModel.js"
 import {readFromFirebase, subscribeToGuestCount} from "../../../firebase/firebaseModel.js";
 
+import Loading from "../../../componentViews/loading.jsx";
+
 export default function Home(props) {
   const [loading, setLoading] = useState(true);
 
@@ -36,16 +38,10 @@ export default function Home(props) {
   
   const event = events.find((object) => object.id === props.params.id);
 
-  if(event == undefined){
-    return (
-      <div>404 Error not Found</div>
-    )
-  }
-
   return (
     <div>
-      {loading ? (
-        <p>Loading...</p>
+      {loading || event == undefined ? (
+        <Loading/>
       ) : (
         <div>
           <DetailedPub event={event}

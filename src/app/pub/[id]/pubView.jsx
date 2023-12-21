@@ -12,14 +12,13 @@ export default function DetailedPubView(props) {
     setPubs(updatedPubs);
 
     }
-    const date = new Date(props.event.date);
-    console.log(date);
+    const date = new Date(props.event?.date);
     return (
         <div
         className="pb-5 sm:py-5 sm:px-10 text-card-foreground mx-auto bg-gray-800 shadow-md">
         <div className="flex flex-col space-y-1.5 p-6">
             <div className="flex justify-between items-center">
-                <h3 className="tracking-tight text-2xl md:text-3xl font-bold">{props.event.name}</h3>
+                <h3 className="tracking-tight text-2xl md:text-3xl font-bold">{props.event?.name}</h3>
             </div>
             <div className="flex items-center space-x-2 mt-2">
                 <svg
@@ -93,7 +92,7 @@ export default function DetailedPubView(props) {
                     <path d="M21 15c0-4.625-3.507-8.441-8-8.941V4h-2v2.059c-4.493.5-8 4.316-8 8.941v2h18v-2zM5 15c0-3.859 3.141-7 7-7s7 3.141 7 7H5zm-3 3h20v2H2z"></path>
                     
                 </svg>
-                <p className="text-sm md:text-base">{props.event.food}</p>
+                <p className="text-sm md:text-base">{props.event?.food}</p>
             </div>
             <div className="flex items-center space-x-2 mt-1">
                 <svg
@@ -111,13 +110,13 @@ export default function DetailedPubView(props) {
                 <path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 6h16v2H4V6zm0 12v-6h16.001l.001 6H4z"></path>
                 <path d="M6 14h6v2H6z"></path>                        
                 </svg>
-                <p className="text-sm md:text-base">{props.event.price + " kr"}</p>
+                <p className="text-sm md:text-base">{props.event?.price + " kr"}</p>
             </div>
         </div>
         <div className="px-6 text-sm">
             <div className="mb-4">
                 <img
-                    src={props.event.imgSrc}
+                    src={props.event?.imgSrc}
                     alt="Event Image"
                     className="w-full h-auto rounded-md"
                     width="700"
@@ -125,7 +124,7 @@ export default function DetailedPubView(props) {
                 />
             </div>
             <h1 className="font-bold mb-4 text-xl">Description</h1>
-            {props.event.description}
+            {props.event?.description}
         </div>
         <Link href="http://localhost:3000/schedule" class="simpleButton" onClick={() => handleDelete(pubs.id)}>Delete Pub</Link>
     </div>
