@@ -119,6 +119,9 @@ export default observer(
 
 
         return (
+            !isDataLoaded ? (
+                <p>Loading...</p>
+            ) : (
             <LivePub 
                 model={model}
                 guest={guest}
@@ -135,6 +138,6 @@ export default observer(
                 renderExternalInput={renderExternalInput}
                 handleExternalInputChange={handleExternalInputChange}
                 handleExternalInputSubmit={handleExternalInputSubmit}
-                />);
+                />));
     }
 );

@@ -1,40 +1,37 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from "react";
-import { observer } from "mobx-react-lite";
-import "../EventsModel.js"
 
-
-export default observer(function AdminSchedule(props) {
+export default function AdminSchedule(props) {
     const [filteredEvents, setFilteredEvents] = useState([...props.model.events]);
     const [selectedOrganizer, setSelectedOrganizer] = useState("All");
 
     const handleFilter = (organizer) => {
-        {console.log(filteredEvents)}
+        { console.log(filteredEvents) }
         setSelectedOrganizer(organizer);
         if (organizer === "All") {
-          setFilteredEvents([...props.model.events]);
+            setFilteredEvents([...props.model.events]);
         } else {
-          const filtered = props.model.events.filter(
-            (event) => event.organizer == organizer
-          );
-          setFilteredEvents(filtered);
+            const filtered = props.model.events.filter(
+                (event) => event.organizer == organizer
+            );
+            setFilteredEvents(filtered);
         }
-      };
+    };
 
     return (
 
         <div className="bg-gray-800 min-h-screen">
-            <h1 className="header">Schedule</h1>
+            <header className="text-6xl font-bold text-center py-8">Schedule</header>
             <div className="dropdown">
-                <button className="dropbtn">What Mastery?</button>
+                <button className="dropbtn rounded-r-lg">What Mastery?</button>
                 <div className="dropdown-content">
-                    
+
                     <a href="#" onClick={() => handleFilter("All")}> All</a>
                     <a href="#" onClick={() => handleFilter("Qmisk")}> Qmisk</a>
                     <a href="#" onClick={() => handleFilter("TMEIT")}>TMEIT</a>
                 </div>
             </div>
-        <Link href="http://localhost:3000/newpub" class="button_plus"></Link>
+            <Link href="http://localhost:3000/newpub" className="button_plus rounded-lg"></Link>
 
 
             <div className="flex flex-wrap py-5 px-8 sm:px-20 gap-5 justify-center sm:justify-start">
@@ -55,7 +52,7 @@ export default observer(function AdminSchedule(props) {
                     <figure><img className="h-48 rounded-t-lg object-cover" src={event.imgSrc} alt="Event Image" /></figure>
                     <div className="card-body h-48 px-4 py-4">
                         <h1 className="text-xl font-bold card-title">{event.name}</h1>
-                        <p className="py-4">{event.description}</p>
+                        <p className="py-4">{event.organizer}</p>
                         <p>{/*event.date.getDate() + " " + event.date.toLocaleString('en-us', { month: 'long' }) + " " + event.startTime.getHours() + ":" + (event.startTime.getMinutes() < 10 ? '0' : '') + event.startTime.getMinutes()*/}</p>
                         <p>{"Food: " + event.food}</p>
                         <p>{"Price: " + event.price + " kr"}</p>
@@ -65,6 +62,5 @@ export default observer(function AdminSchedule(props) {
         );
     }
 
-    
-}
-);
+
+};

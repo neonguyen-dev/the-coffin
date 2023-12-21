@@ -45,7 +45,7 @@ export default observer(
             addEventToFirebase({
                 name: pubData.name,
                 organizer: pubData.organizer,
-                date: new Date(pubData.date).getTime(),
+                date: new Date(pubData.date + "T17:00").getTime(),
                 description: pubData.description,
                 food: pubData.food,
                 price: pubData.price,

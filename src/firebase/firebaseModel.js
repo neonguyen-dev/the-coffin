@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, push, ref, get, set, update } from "firebase/database";
+import { getDatabase, push, ref, get, set, onValue } from "firebase/database";
 
 import firebaseConfig from "./firebaseConfig.js";
 import { getAuth } from "@firebase/auth";
@@ -11,13 +11,12 @@ const db = getDatabase(app);
 const auth = getAuth(app);
 const imageDb = getStorage(app);
 
-function persistenceToModel(data_from_firebase, model){
-    console.log(data_from_firebase);
+function persistenceToModel(data_from_firebase, model) {
     model.events = Object.values(data_from_firebase?.pubs || []);
     model.guestsArray = (data_from_firebase?.guest || []);
 }
 
-async function addEventToFirebase(eventToAdd){
+async function addEventToFirebase(eventToAdd) {
     const eventRef = push(ref(db, 'pubs'),
         {
             name: eventToAdd.name,
@@ -31,29 +30,41 @@ async function addEventToFirebase(eventToAdd){
     );
 
     const eventId = eventRef.key;
-    
+
     await set(ref(db, `pubs/${eventId}`), { ...eventToAdd, id: eventId });
 
     console.log("add");
 }
 
-async function addGuestListToFirebase(guestList){
+async function addGuestListToFirebase(guestList) {
     console.log(guestList);
-    await set(ref(db,'guest'), guestList)
+    await set(ref(db, 'guest'), guestList)
 }
 
-async function readGuestsFromFirebase(model){
+async function readGuestsFromFirebase(model) {
     model.ready = false;
-    const snapshot = await get(ref(db, '/'));
+    const snapshot = await get(ref(db, 'guest'));
     await persistenceToModel(snapshot.val(), model);
-    model.ready = true; 
+    model.ready = true;
 }
 
-async function readFromFirebase(model){
+async function readFromFirebase(model) {
     model.ready = false;
     const snapshot = await get(ref(db, '/'));
     await persistenceToModel(snapshot.val(), model);
     model.ready = true;
 }
 
-export {auth, imageDb, readFromFirebase, addEventToFirebase, addGuestListToFirebase, readGuestsFromFirebase};
+function subscribeToGuestCount(callback) {
+    const eventsRef = ref(db, "guest/guest");
+
+    const unsubscribe = onValue(eventsRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data)
+        callback(data ? Object.values(data) : []);
+    });
+
+    return unsubscribe;
+}
+
+export { auth, imageDb, readFromFirebase, addEventToFirebase, addGuestListToFirebase, readGuestsFromFirebase, subscribeToGuestCount };
