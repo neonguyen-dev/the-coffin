@@ -7,6 +7,7 @@ import { observer } from "mobx-react-lite";
 // Local imports from project
 import { readFromFirebase } from "@/firebase/firebaseModel.js";
 import model from "@/app/EventsModel.js"
+import Loading from "@/components/loading.jsx";
 import UpcomingView from "./upcomingView.jsx";
 
 export default observer(
@@ -16,7 +17,7 @@ export default observer(
         return (
             <div>
                 {loading ? (
-                    <p>Loading...</p>
+                    <Loading />
                 ) : (
                     <UpcomingView model={model} />
                 )}
