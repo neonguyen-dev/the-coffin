@@ -2,16 +2,10 @@
 import React, { useEffect, useState } from "react";
 import Link from 'next/link';
 //import {readFromFirebase} from "../../firebase/firebaseModel.js";
-//import "../EventsModel.js"
+import "../../EventsModel.js"
 
 export default function DetailedPubView(props) {
-    const [pubs, setPubs] = useState(props.events);
-
-    const handleDelete = (id) => {
-    const updatedPubs = pubs.filter((pub) => pub.id != id);
-    setPubs(updatedPubs);
-
-    }
+    
     const date = new Date(props.event?.date);
     return (
         <div
@@ -126,7 +120,7 @@ export default function DetailedPubView(props) {
             <h1 className="font-bold mb-4 text-xl">Description</h1>
             {props.event?.description}
         </div>
-        <Link href="http://localhost:3000/schedule" class="simpleButton" onClick={() => handleDelete(pubs.id)}>Delete Pub</Link>
+        <Link href="http://localhost:3000/schedule" class="simpleButton" onClick={() => props.handleDelete(props.event.id)}>Delete Pub</Link>
     </div>
     );
 
