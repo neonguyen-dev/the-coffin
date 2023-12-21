@@ -1,7 +1,10 @@
-import Link from 'next/link';
+// Third party library imports
 import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import "../EventsModel.js"
+import Link from 'next/link';
+
+// Local imports from project
+import "@/app/EventsModel.js"
 
 
 export default observer(function AdminSchedule(props) {

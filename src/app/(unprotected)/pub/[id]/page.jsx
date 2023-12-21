@@ -1,10 +1,12 @@
 'use client'
 
+// Third party library imports
 import React, { useEffect, useState } from "react";
-import DetailedPub from "./pubPresenter.jsx"
 
-import model from "../../EventsModel.js"
-import {readFromFirebase} from "../../../firebase/firebaseModel.js";
+// Local imports from project
+import {readFromFirebase} from "@/firebase/firebaseModel.js";
+import model from "@/app/EventsModel.js"
+import DetailedPub from "./pubPresenter.jsx"
 
 export default function Home(props) {
   const [loading, setLoading] = useState(true);

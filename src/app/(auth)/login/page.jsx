@@ -6,8 +6,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 // Local imports from project
-import LoginView from "./loginView";
 import { UserAuth } from "@/context/AuthContext";
+import LoginView from "./loginView";
 
 export default observer(
   function Login() {

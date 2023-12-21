@@ -3,12 +3,11 @@
 // Third party library imports
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { observer } from "mobx-react-lite";
 
 // Local imports from project
 import { UserAuth } from "@/context/AuthContext"
-import { RegisterView } from "./registerView";
-import { observer } from "mobx-react-lite";
-
+import RegisterView from "./registerView";
 
 export default observer(
   function RegisterPresenter() {
@@ -34,7 +33,7 @@ export default observer(
         error={error}
         register={() => {
           register(email, password, firstName, lastName, organisation, securityLevel).then((user) => {
-            console.log(user);
+            console.log("Account successfully created");
             router.push("/");
           }).catch((error) => {
             console.log(error);

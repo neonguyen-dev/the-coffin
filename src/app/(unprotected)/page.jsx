@@ -4,16 +4,16 @@
 import { observer } from "mobx-react-lite";
 
 // Local imports from project
-import GuestView from "./guestView.jsx";
 import { UserAuth } from "@/context/AuthContext.jsx";
+import HomeView from "./homeView.jsx";
 
 export default observer(
-  function Guest() {
+  function Home() {
     const {user, logout} = UserAuth();
     
     return (
       <div>
-        <GuestView user={user} logout={() => {
+        <HomeView user={user} logout={() => {
           logout().then(
             console.log("You are now logged out")
           ).catch((error) => {

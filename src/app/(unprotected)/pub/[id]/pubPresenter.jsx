@@ -1,7 +1,10 @@
 'use client'
 
-import DetailedPubView from "./pubView.jsx";
+// Third party library imports
 import { observer } from "mobx-react-lite";
+
+// Local imports from project
+import DetailedPubView from "./pubView.jsx";
 
 export default observer(
     function DetailedPub(props) {

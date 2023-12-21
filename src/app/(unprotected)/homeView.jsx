@@ -5,7 +5,7 @@ import Link from "next/link";
 // Local imports from project
 import { Footer } from "@/componentViews/footer";
 
-export default function GuestView(props) {
+export default function HomeView(props) {
   return (
     <div className="bg-gray-900 flex flex-col h-screen">
       <div className="m-auto justify-center">
