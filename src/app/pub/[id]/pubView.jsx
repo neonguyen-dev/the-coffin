@@ -1,4 +1,17 @@
+//import { useState } from "react/cjs/react.production.min";
+import React, { useEffect, useState } from "react";
+import Link from 'next/link';
+//import {readFromFirebase} from "../../firebase/firebaseModel.js";
+//import "../EventsModel.js"
+
 export default function DetailedPubView(props) {
+    const [pubs, setPubs] = useState(props.events);
+
+    const handleDelete = (id) => {
+    const updatedPubs = pubs.filter((pub) => pub.id != id);
+    setPubs(updatedPubs);
+
+    }
     const date = new Date(props.event.date);
     console.log(date);
     return (
@@ -114,7 +127,27 @@ export default function DetailedPubView(props) {
             <h1 className="font-bold mb-4 text-xl">Description</h1>
             {props.event.description}
         </div>
-        <button class="simpleButton">Delete Pub</button>
+        <Link href="http://localhost:3000/schedule" class="simpleButton" onClick={() => handleDelete(pubs.id)}>Delete Pub</Link>
     </div>
     );
+
+    // function deletePub(id) {
+    //     const updatedEvents = prop.model.event.filter((events) => props.model.event.id != id);
+    //     setevents(updatedEvents);
+    // }
+
+    // function pubList() {
+    //     const [pubs, setPubs] = useState(props.model.event);
+
+    //     const handleDelete = (id) => {
+            // if (selectedPubId != null) {
+            //     deletePub(selectedPubId);
+            //     setSelectedPubId(null);
+            // }
+
+    //         const updatedPubs = pubs.filter((pub) => pub.id != id);
+    //         setPubs(updatedPubs);
+    //     }
+    // }
 }
+
