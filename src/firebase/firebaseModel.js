@@ -1,6 +1,6 @@
 // Third party library imports
 import { initializeApp } from "firebase/app";
-import { getDatabase, push, ref, get, set, update } from "firebase/database";
+import { getDatabase, push, ref, get, set, onValue } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
