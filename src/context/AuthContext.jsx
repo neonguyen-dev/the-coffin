@@ -16,6 +16,7 @@ const AuthContext = createContext();
 
 export function AuthContextProvider({children}) {
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); 
 
   function register(email, password, firstName, lastName, organisation, securityLevel) {
     // TODO create more constraints given the other parameters/create separate function for them (probably the best solution)
@@ -33,12 +34,13 @@ export function AuthContextProvider({children}) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      setIsLoading(false);
     });
     return () => unsubscribe();
-  }, [user]);
+  }, []);
 
   return (
-    <AuthContext.Provider value={{user, register, login, logout}}>
+    <AuthContext.Provider value={{user, register, login, logout, isLoading}}>
       {children}
     </AuthContext.Provider>
   )

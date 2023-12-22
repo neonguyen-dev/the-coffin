@@ -2,29 +2,40 @@
 
 // Third party library imports
 import { useEffect } from "react";
-
-// Local imports from project
 import { UserAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 
-const ProtectedRoute = ({children}) => {
-    const { user } = UserAuth();
-    const router = useRouter();
+import Loading from "@/components/loading";
 
-    useEffect(() => {
-      // If user is not authenticated, redirect to login page
-      if (!user) {
-        router.push("/login");
-      }
-    }, []);
+const ProtectedRoute = ({ children }) => {
+  const { user, isLoading } = UserAuth();
+  const router = useRouter();
 
-    // If user is not authenticated, render nothing
-    if (!user) {
-      return null;
+  useEffect(() => {
+    // If user info is still loading, do nothing
+    if (isLoading) {
+      return;
     }
 
-    // If user is authenticated, return the child components
-    return children;
+    // If user is not authenticated, redirect to login page
+    if (!user) {
+      router.push("/login");
+    }
+  }, [user, isLoading]);
+
+  // If user info is still loading, you can render a loading spinner or message
+  if (isLoading) {
+    return <Loading/>;
+  }
+
+  // If user is not authenticated, render nothing
+  if (!user) {
+    return null;
+  }
+
+  // If user is authenticated, return the child components
+  return children;
 };
 
 export default ProtectedRoute;
+

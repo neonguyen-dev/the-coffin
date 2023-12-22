@@ -5,7 +5,7 @@ import Link from 'next/link';
 import "../../../EventsModel.js"
 
 export default function DetailedPubView(props) {
-    
+
     const date = new Date(props.event?.date);
     return (
         <div
@@ -120,7 +120,8 @@ export default function DetailedPubView(props) {
             <h1 className="font-bold mb-4 text-xl">Description</h1>
             {props.event?.description}
         </div>
-        <Link href="http://localhost:3000/schedule" class="simpleButton" onClick={() => props.handleDelete(props.event.id)}>Delete Pub</Link>
+        {console.log(props.user)}
+        {props.user && <Link href="schedule" class="simpleButton" onClick={() => props.handleDelete(props.event.id)}>Delete Pub</Link>}
     </div>
     );
 
