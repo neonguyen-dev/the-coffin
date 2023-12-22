@@ -25,7 +25,7 @@ function LoginView(props) {
             <button type="button" onClick={() => props.login()} className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 hover:underline">Login</button>
           </form>
           <p className="text-base font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
-            Don't have an account?
+            Don&apos;t have an account?
           </p>
           <Link href="register" className="hover:underline text-sm text-gray-900 dark:text-white">Sign up now!</Link>
         </div>

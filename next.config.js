@@ -2,6 +2,7 @@
 const nextConfig = {
     //output: 'export',
     //trailingSlash: true,
+    distDir: '.next',
 }
 
 module.exports = nextConfig

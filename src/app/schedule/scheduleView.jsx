@@ -31,7 +31,7 @@ export default function AdminSchedule(props) {
                     <a href="#" onClick={() => handleFilter("TMEIT")}>TMEIT</a>
                 </div>
             </div>
-            <Link href="http://localhost:3000/newpub" className="simpleButton2">+</Link>
+            <Link href="newpub" className="simpleButton2">+</Link>
 
 
             <div className="flex flex-wrap py-5 px-8 sm:px-20 gap-5 justify-center sm:justify-start">
@@ -40,7 +40,7 @@ export default function AdminSchedule(props) {
                         return new Date(a.date) - new Date(b.date);
                     }).map(renderEventsCB)}
             </div>
-            <Link href="http://localhost:3000/live" class="simpleButton">Guests</Link>
+            <Link href="live" className="simpleButton">Guests</Link>
         </div>
 
 
@@ -48,7 +48,7 @@ export default function AdminSchedule(props) {
 
     function renderEventsCB(event) {
         return (
-            <Link href={"/pub/" + event.id}>
+            <Link key={event.id} href={"/pub/" + event.id}>
                 <div className="card w-80 bg-gray-600 shadow-xl rounded-lg hover:scale-105 transition">
                     <figure><img className="h-48 rounded-t-lg object-cover" src={event.imgSrc} alt="Event Image" /></figure>
                     <div className="card-body h-48 px-4 py-4">
