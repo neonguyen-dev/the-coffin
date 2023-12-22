@@ -5,16 +5,14 @@ import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 
 // Local imports from project
-import GuestView from "./homeView.jsx";
 import { UserAuth } from "@/context/AuthContext.jsx";
-import model from "../EventsModel.js";
-
-import Loading from "../../components/loading.jsx";
-import { readFromFirebase } from "../../firebase/firebaseModel.js";
-
+import { readFromFirebase } from "@/firebase/firebaseModel.js";
+import model from "@/app/EventsModel.js";
+import Loading from "@/components/loading.jsx";
+import HomeView from "./homeView.jsx";
 
 export default observer(
-  function Guest() {
+  function Home() {
     const { user, logout } = UserAuth();
 
     const currentDate = new Date();
@@ -36,7 +34,7 @@ export default observer(
         {loading ? (
           <Loading />
         ) : (
-          <GuestView events={events} user={user} logout={() => {
+          <HomeView events={events} user={user} logout={() => {
             logout().then(
               console.log("You are now logged out")
             ).catch((error) => {

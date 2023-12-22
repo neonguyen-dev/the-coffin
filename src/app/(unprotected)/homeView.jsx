@@ -5,14 +5,14 @@ import Link from "next/link";
 // Local imports from project
 import { Footer } from "@/components/footer";
 
-export default function GuestView(props) {
+export default function HomeView(props) {
   return (
     <div className="bg-gray-900 flex flex-col min-h-screen">
       <div className="m-auto justify-center p-10">
         <h1 className="text-6xl font-bold text-white sm:text-8xl text-center">The Coffin</h1>
         <h2 className="text-4xl text-white sm:text-6xl text-center">Welcome to Kistan 2.0 </h2>
         <div className="py-2 sm:py-5 grid gap-x-10 grid-cols-1 sm:grid-cols-2">
-          <Link href={"/pub/" + props.events.find((event) => event.organizer === "Qmisk")?.id || "/"}>
+        <Link href={"/pub/" + props.events.find((event) => event.organizer === "Qmisk")?.id || "/"}>
             <button className="flex items-center justify-center transition rounded-lg bg-red-700 hover:bg-red-800 btn-lg py-4">
               <Image
                   alt="Qmisk logo"

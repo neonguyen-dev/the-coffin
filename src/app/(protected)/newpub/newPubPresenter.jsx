@@ -1,12 +1,14 @@
 'use client'
 
-import NewPub from "./newPubView.jsx"; 
+// Third party library imports
 import { observer } from "mobx-react-lite";
-import React, { useEffect, useState } from "react";
-import {addEventToFirebase} from "../../../firebase/firebaseModel.js";
-
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import React, { useEffect, useState } from "react";
+
+// Local imports from project
+import { addEventToFirebase } from "@/firebase/firebaseModel.js";
 import { imageDb } from "@/firebase/firebaseModel";
+import NewPub from "./newPubView.jsx"; 
 
 export default observer(
     function CreatePub() {

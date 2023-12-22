@@ -1,10 +1,11 @@
+// Third party library imports
 import { initializeApp } from "firebase/app";
-import { getDatabase, push, ref, get, set, onValue } from "firebase/database";
-
-import firebaseConfig from "./firebaseConfig.js";
-import { getAuth } from "@firebase/auth";
+import { getDatabase, push, ref, get, set, update } from "firebase/database";
+import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
+// Local imports from project
+import firebaseConfig from "./firebaseConfig.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);

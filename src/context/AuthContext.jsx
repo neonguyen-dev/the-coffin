@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-} from "@firebase/auth";
+} from "firebase/auth";
 
 // Local imports from project
 import { auth } from "../firebase/firebaseModel";

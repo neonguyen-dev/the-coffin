@@ -1,7 +1,7 @@
 // Third party library imports
 import Link from "next/link";
 
-export function RegisterView(props) {
+export default function RegisterView(props) {
   return (
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <a className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
