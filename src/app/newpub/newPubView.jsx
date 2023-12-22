@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Link from "next/link";
 
 export default function NewPub(props) {
 
@@ -49,8 +49,10 @@ export default function NewPub(props) {
             </div>
 
             <div className="clearfix">
-                <button type="button" className="cancelbtn">Cancel</button>
-                <button type="submit" className="signupbtn" onClick={props.handleSubmit}>Create Pub!</button>
+                <Link href="/schedule">
+                    <button type="button" className="cancelbtn">Cancel</button>
+                    <button type="submit" className="signupbtn" onClick={props.handleSubmit}>Create Pub!</button>
+                </Link>
             </div>
         </div>
     );
