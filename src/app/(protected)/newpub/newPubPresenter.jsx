@@ -3,7 +3,7 @@
 import NewPub from "./newPubView.jsx"; 
 import { observer } from "mobx-react-lite";
 import React, { useEffect, useState } from "react";
-import {addEventToFirebase} from "../../firebase/firebaseModel.js";
+import {addEventToFirebase} from "../../../firebase/firebaseModel.js";
 
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { imageDb } from "@/firebase/firebaseModel";

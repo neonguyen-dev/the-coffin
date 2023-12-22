@@ -4,10 +4,10 @@ import AdminSchedule from "./scheduleView.jsx";
 import { observer } from "mobx-react-lite";
 
 import React, { useEffect, useState } from "react";
-import model from "../EventsModel.js"
-import { readFromFirebase } from "../../firebase/firebaseModel.js";
+import model from "../../EventsModel.js"
+import { readFromFirebase } from "../../../firebase/firebaseModel.js";
 
-import Loading from "../../componentViews/loading.jsx";
+import Loading from "../../../components/loading.jsx";
 
 export default observer(
     function Schedule() {

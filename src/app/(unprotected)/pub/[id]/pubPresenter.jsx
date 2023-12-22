@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import DetailedPubView from "./pubView.jsx";
 import LiveCounterView from "./liveCounterView.jsx";
 import { observer } from "mobx-react-lite";
-import model from "../../EventsModel.js";
+import model from "../../../EventsModel.js";
 import { getDatabase, ref, remove } from "@firebase/database";
 
 

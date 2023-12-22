@@ -5,12 +5,12 @@ import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 
 // Local imports from project
-import GuestView from "./guestView.jsx";
+import GuestView from "./homeView.jsx";
 import { UserAuth } from "@/context/AuthContext.jsx";
-import model from "./EventsModel.js";
+import model from "../EventsModel.js";
 
-import Loading from "../componentViews/loading.jsx";
-import { readFromFirebase } from "../firebase/firebaseModel.js";
+import Loading from "../../components/loading.jsx";
+import { readFromFirebase } from "../../firebase/firebaseModel.js";
 
 
 export default observer(

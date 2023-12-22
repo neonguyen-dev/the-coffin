@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Local imports from project
-import { Footer } from "@/componentViews/footer";
+import { Footer } from "@/components/footer";
 
 export default function GuestView(props) {
   return (

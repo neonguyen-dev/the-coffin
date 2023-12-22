@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from 'next/link';
 //import {readFromFirebase} from "../../firebase/firebaseModel.js";
-import "../../EventsModel.js"
+import "../../../EventsModel.js"
 
 export default function DetailedPubView(props) {
     

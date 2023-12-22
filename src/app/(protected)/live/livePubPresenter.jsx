@@ -1,10 +1,10 @@
 'use client'
 
 import LivePub from "./livePubView.jsx"; 
-import model from "../EventsModel.js"
+import model from "../../EventsModel.js"
 import { observer } from "mobx-react-lite";
 import {useState, useEffect} from 'react';
-import { addGuestListToFirebase, readGuestsFromFirebase  } from "../../firebase/firebaseModel.js";
+import { addGuestListToFirebase, readGuestsFromFirebase  } from "../../../firebase/firebaseModel.js";
 
 export default observer(
     function CreateLivePub() {

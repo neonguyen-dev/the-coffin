@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from "react";
 import DetailedPub from "./pubPresenter.jsx"
 
-import model from "../../EventsModel.js"
-import {readFromFirebase, subscribeToGuestCount} from "../../../firebase/firebaseModel.js";
+import model from "../../../EventsModel.js"
+import {readFromFirebase, subscribeToGuestCount} from "../../../../firebase/firebaseModel.js";
 
-import Loading from "../../../componentViews/loading.jsx";
+import Loading from "../../../../components/loading.jsx";
 
 export default function Home(props) {
   const [loading, setLoading] = useState(true);
