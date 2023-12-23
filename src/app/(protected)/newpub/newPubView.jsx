@@ -50,10 +50,8 @@ export default function NewPub(props) {
             </div>
 
             <div className="clearfix">
-                <Link href="/schedule">
-                    <button type="button" className="cancelbtn">Cancel</button>
-                    <button type="submit" className="signupbtn" onClick={props.handleSubmit}>Create Pub!</button>
-                </Link>
+                <button type="button" className="cancelbtn">Cancel</button>
+                <button type="submit" className="signupbtn" onClick={props.handleSubmit}>Create Pub!</button>
             </div>
         </div>
     );

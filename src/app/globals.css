@@ -3,35 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 
 
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box
+}
 
 /* Full-width input fields */
-  input[type=text]{
+input[type=text] {
   color: black;
   width: 50%;
   padding: 15px;
@@ -41,7 +33,7 @@ body {
   background: #f1f1f1;
 }
 
-input[type=text]:focus{
+input[type=text]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -64,7 +56,7 @@ button {
 }
 
 button:hover {
-  opacity:1;
+  opacity: 1;
 }
 
 /* Extra styles for the cancel button */
@@ -74,7 +66,8 @@ button:hover {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
+.cancelbtn,
+.signupbtn {
   float: left;
   width: 50%;
 }
@@ -91,7 +84,7 @@ button:hover {
   display: table;
 }
 
-.header{
+.header {
   padding: 60px;
   text-align: center;
   background: #000000;
@@ -101,12 +94,14 @@ button:hover {
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
+
+  .cancelbtn,
+  .signupbtn {
     width: 100%;
   }
 }
 
-.simpleButton{
+.simpleButton {
   display: inline-block;
   margin: 10px;
   outline: 0;
@@ -127,7 +122,7 @@ button:hover {
   transition-property: color, background-color, border-color;
 }
 
-.simpleButton2{
+.simpleButton2 {
   display: inline-block;
   margin: 10px;
   outline: 0;
@@ -168,7 +163,7 @@ button:hover {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -179,11 +174,17 @@ button:hover {
   display: block;
 }
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
-.dropdown:hover .dropbtn {background-color: #585462;}
+.dropdown:hover .dropbtn {
+  background-color: #585462;
+}
 
 
 .button_plus {
@@ -195,7 +196,7 @@ button:hover {
   background: #fff;
   cursor: pointer;
   border: 2px solid #095776;
-  
+
 }
 
 .button_plus:after {
